@@ -1,5 +1,8 @@
 package students;
 
+import students.model.Student;
+import students.storage.StudentStorage;
+
 import java.util.Scanner;
 
 public class StudentDemo {
@@ -64,7 +67,6 @@ public class StudentDemo {
                 student.setSubject(newSubjectName.trim());
                 System.out.println("Subject name changed");
             }
-
         }
     }
 
