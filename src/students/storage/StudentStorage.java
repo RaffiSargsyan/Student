@@ -8,11 +8,16 @@ public class StudentStorage {
 
     public void add(Student student) {
         if (size == array.length) {
-            increaseArray();
+            Student[] temp = new Student[array.length + 10];
+            for (int i = 0; i < size; i++) {
+                temp[i] = array[i];
+            }
+            array = temp;
 
         }
         array[size++] = student;
     }
+
 
     public void print() {
         for (int i = 0; i < size; i++) {
@@ -20,13 +25,6 @@ public class StudentStorage {
         }
     }
 
-    private void increaseArray() {
-        Student[] temp = new Student[array.length + 10];
-        for (int i = 0; i < size; i++) {
-            temp[i] = array[i];
-        }
-        array = temp;
-    }
 
     public void deleteByIndex(int index) {
         if (index < 0 || index >= size) {
@@ -57,4 +55,21 @@ public class StudentStorage {
         }
         return array[index];
     }
+
+    public void showAnOldestStudent() {
+        Student oldestStudent = array[0];
+        for (int i = 1; i < size; i++) {
+            if (array[i].getAge() > oldestStudent.getAge()) {
+                oldestStudent = array[i];
+            }
+        }
+        System.out.println(oldestStudent.getName() + " is our oldest student");
+        System.out.println("And we already have " + size + " students\n");
+    }
+
+    private void increaseArray() {
+
+    }
 }
+
+
