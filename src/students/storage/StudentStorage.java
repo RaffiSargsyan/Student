@@ -67,9 +67,6 @@ public class StudentStorage {
         System.out.println("And we already have " + size + " students\n");
     }
 
-    private void increaseArray() {
-
-    }
 }
 
 
